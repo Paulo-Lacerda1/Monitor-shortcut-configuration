@@ -868,8 +868,6 @@ class MainWindow(Adw.ApplicationWindow):
         if not profile:
             return
         message = 'O perfil e o respetivo atalho serão removidos.'
-        if profile.get('original_binding'):
-            message = 'Este perfil foi importado. Ao eliminá-lo, o comando original do teu atalho será reposto.'
         dialog = Adw.MessageDialog.new(self, f'Eliminar «{profile["name"]}»?', message)
         dialog.add_response('cancel', 'Cancelar')
         dialog.add_response('delete', 'Eliminar')

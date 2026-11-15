@@ -363,11 +363,11 @@ class Bindings:
         command = shlex.join(['/usr/bin/python3', str(APP_DIR / 'app.py'), '--apply', profile['id']])
         self.write(path, {'name': profile['name'], 'command': command, 'binding': profile['shortcut']})
 
-    def remove(self, profile):
+    def remove(self, profile, restore_original=False):
         path = profile.get('binding_path')
         if not path:
             return
-        if profile.get('original_binding'):
+        if restore_original and profile.get('original_binding'):
             self.write(path, profile['original_binding'])
         else:
             if not self.root.set_strv('custom-keybindings', [p for p in self.paths() if p != path]):

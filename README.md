@@ -47,8 +47,9 @@ Para **atualizar o teu Ctrl+Shift+2 com a posição atual**:
 
 Os scripts existentes `~/.local/bin/monitor-N` são importados como dados,
 sem serem executados nem modificados. O comando original de cada atalho só é
-substituído quando guardas esse perfil na aplicação. Ao eliminar um perfil
-importado, o comando original é reposto.
+substituído quando guardas esse perfil na aplicação. Ao eliminar um perfil,
+o respetivo atalho também é removido do GNOME e a combinação fica disponível
+para outro perfil. Os scripts originais são preservados.
 
 ## O que fica guardado
 

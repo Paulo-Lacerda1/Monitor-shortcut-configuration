@@ -30,7 +30,7 @@ def main():
                 # Restore only shortcuts whose command still belongs to this app.
                 path = profile.get('binding_path')
                 if path and path in bindings.paths() and str(target / 'app.py') in bindings.read(path)['command']:
-                    bindings.remove(profile)
+                    bindings.remove(profile, restore_original=True)
         for item in (desktop, icon, launcher):
             item.unlink(missing_ok=True)
         if target.exists():
